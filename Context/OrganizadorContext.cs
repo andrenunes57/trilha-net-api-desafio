@@ -1,15 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TrilhaApiDesafio.Models;
 
-namespace TrilhaApiDesafio.Context
-{
-    public class OrganizadorContext : DbContext
-    {
-        public OrganizadorContext(DbContextOptions<OrganizadorContext> options) : base(options)
-        {
-            
-        }
+namespace TrilhaApiDesafio.Context;
 
-        public DbSet<Tarefa> Tarefas { get; set; }
-    }
+public class OrganizadorContext(DbContextOptions<OrganizadorContext> options) : DbContext(options)
+{
+    public DbSet<Tarefa> Tarefas { get; set; }
 }
